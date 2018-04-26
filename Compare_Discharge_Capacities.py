@@ -1,15 +1,13 @@
+#USER MUST SPECIFY NUMBER OF CYCLES TO BE ANALYZED
 import pandas as pd
-from pandas import ExcelWriter
-from pandas import ExcelFile
 import numpy as np
-import subprocess
 from openpyxl import load_workbook, Workbook
 import Tkinter, Tkconstants, tkFileDialog
 import os, sys
 from collections import OrderedDict
 files = tkFileDialog.askopenfilenames(parent=Tkinter.Tk(),title='Choose a file')
 lst = list(files)
-noc = 150 #***Number OF Cycles***
+noc = input("Number of Cycles: ") #***Number OF Cycles***
 CDC= 'CompareDischargeCapacities.xlsx'
 full_data={}
 full_data["Cycle Number"]=range(1,noc+1)
@@ -45,6 +43,6 @@ for i in lst:
             discharge_capacities.append(float(item))
         full_data_ordered[battery_name]=discharge_capacities
 df = pd.DataFrame.from_dict(full_data_ordered)
-writer=ExcelWriter(CDC)
+writer=pd.ExcelWriter(CDC)
 df.to_excel(writer,'Sheet1',index=False)
 writer.save()
