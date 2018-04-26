@@ -1,16 +1,14 @@
+#USER MUST SPECIFY NUMBER OF CYCLES TO BE ANALYZED
 import pandas as pd
-from pandas import ExcelWriter
-from pandas import ExcelFile
 import numpy as np
-import subprocess
 from openpyxl import load_workbook, Workbook
 import Tkinter, Tkconstants, tkFileDialog
-import os, sys
+import os
 from collections import OrderedDict
 from operator import itemgetter
 files = tkFileDialog.askopenfilenames(parent=Tkinter.Tk(),title='Choose a file')
 lst = list(files)
-noc = 150 #Number of Cycles
+noc = input("Number of Cycles: ") #Number of Cycles
 stability_rank= 'sort_by_stability.xlsx'
 data={}
 full_data=OrderedDict({})
@@ -73,6 +71,6 @@ for i in lst:
 data_sorted=sorted(data.items(), key=itemgetter(1))
 full_data.update(data_sorted)
 df = pd.DataFrame.from_dict(full_data).T
-writer=ExcelWriter(stability_rank)
+writer=pd.ExcelWriter(stability_rank)
 df.to_excel(writer,'Sheet1', header=["Percent of Initial Capacity Lost Per Cycle", "First Cycle Discharge Capacity (mAh/g)", "First Cycle Coulombic Efficiency"])
 writer.save()
