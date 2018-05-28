@@ -7,6 +7,8 @@ Programs capable of analyzing excel or text files exported from BTSDA software c
 
 Required Python Libraries/Modules: Numpy, Pandas, Openpyxl, Tkinter, TKconstants, TkFileFialog, Os, Collections, Operator
 
-Sort_by_Stability.py allows users to sort the performance data of selected cells by the average percent decrease in discharge capacity per charge/discharge cycle. Upon running the program, a dialog box will appear and allow users to select the data file for each cell to be analyzed. The discharge capacity and coulombic efficiency of the first cycle for each cell are also presented in the output excel file, "sort_by_stability.xlsx" The program analyzes 150 cycles, this value can be changed in line 13.
+For either program, user must specify number of cycles to be analyzed across all selected data files.
 
-Compare_Discharge_Capacities.py allows users to compare the discharge capacity values for each cycle for all selected cells in the output excel file, "compare_discharge_capacities.xlsx". Upon running the program, a dialog box will appear and allow users to select the data file for each cell to be analyzed. The program analyzes 150 cycles, this value can be changed in line 12.
+Sort_by_Stability.py allows users to sort the performance data of selected cells by the average percent decrease in discharge capacity per charge/discharge cycle. Upon running the program, a dialog box will appear and allow users to select the data file for each cell to be analyzed. The discharge capacity and coulombic efficiency of the first cycle for each cell are also presented in the output excel file, "sort_by_stability.xlsx" 
+
+Compare_Discharge_Capacities.py allows users to compare the discharge capacity values for each cycle for all selected cells. Upon running the program, a dialog box will appear and allow users to select the data file for each cell to be analyzed. The results will appear in the output excel file, "compare_discharge_capacities.xlsx" 
