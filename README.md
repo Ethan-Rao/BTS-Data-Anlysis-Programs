@@ -1,5 +1,5 @@
 # BTS-Data-Anlysis-Programs
-Useful python programs (Python 2.7) for analyzing electrochemical cell performance data exported from BTSDA software, a common software used  by energy storage device researchers. Programs allow users to select mulptiple files at once and compare the performance of different cells.
+Useful python programs (Python 2.7) for analyzing electrochemical cell performance data exported from BTSDA software, a common software used  by energy storage device researchers. Programs allow users to select mulptiple files at once and compare the performance of different cells, a feature not provided when exporting data from the software and that is desired by researchers using the platform.
 
 Example data provided as TestData1, TestData2, TestData3.
 
